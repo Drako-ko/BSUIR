@@ -37,12 +37,12 @@ double sFx(double n, double x) {
         }
         return s;
 }
-void Out_Rez (TFun fy,TFun fs,TFun fys,double a,double b, double h,double n, TMemo *mem) {
+void Out_Rez (TFun f1,TFun f2,TFun f3,double a,double b, double h,double n, TMemo *mem) {
                  for(double x = a; x<=b; x+=h) {
-                        double dfy=fy(-1,x);
-                        double dfs=fs(n,x);
-                        double dmodfys=fys(dfy,dfs);
-                        mem->Lines->Add( FloatToStrF(x,ffExponent,20,0) + "  |  " + FloatToStrF(dfy,ffExponent,20,0) + "  |  " + FloatToStrF(dfs,ffExponent,20,0) + "  |  " + FloatToStrF(dmodfys,ffExponent,20,0));
+                        double dfy=f1(-1,x); //y=f(x)
+                        double dfs=f2(n,x);//s=sum(x)
+                        double dmodfys=f3(dfy,dfs); //abs |y-s|
+                        mem->Lines->Add( FloatToStrF(x,ffFixed,20,20) + "  |  " + FloatToStrF(dfy,ffExponent,20,0) + "  |  " + FloatToStrF(dfs,ffExponent,20,0) + "  |  " + FloatToStrF(dmodfys,ffExponent,20,0));
                 }
 }
 
