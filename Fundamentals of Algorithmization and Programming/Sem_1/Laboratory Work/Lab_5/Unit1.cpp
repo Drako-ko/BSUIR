@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
                         puts(" Massiv A ");
                         for(i=0; i<n;i++) {
                                         int tmp_rnd= rand();
-                                        a[i] = tmp_rnd % 45 - 44;
+                                        a[i] = tmp_rnd % 45 - 30;
                         }
                 }
                 //отображениек введенного массива
